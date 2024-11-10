@@ -3,8 +3,8 @@ import Header from "../../../components/organisms/Header";
 
 export default function AppLayout() {
     return (
-        <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-            <div className="flex flex-col">
+        <div className="flex">
+            <div className="flex flex-col w-full">
                 <Header />
                 <main className="flex flex-1 flex-col p-4 lg:p-6">
                     <Outlet />
