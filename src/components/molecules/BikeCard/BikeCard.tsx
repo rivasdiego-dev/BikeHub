@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type Props = {
     bike: Bike;
 }
@@ -32,9 +34,11 @@ export default function BikeCard({
                     <div className="badge badge-outline"> {bike.year} </div>
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary btn-outline w-full">
-                        Comprar
-                    </button>
+                    <Link to={`/bikes/${bike.id}`} className="w-full">
+                        <button className="btn btn-primary btn-outline w-full">
+                            Comprar
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import BikeCard from "../../../components/molecules/BikeCard";
-import { allbikes, allbikes2 } from "../../../utils/constants";
+import { allbikes } from "../../../utils/constants";
 
-
-const bikes = [...allbikes, ...allbikes2];
+const bikes = [...allbikes, ...allbikes, ...allbikes];
 
 const BikesPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -16,15 +15,41 @@ const BikesPage = () => {
         currentPage * itemsPerPage
     );
 
-    // Generar números de página para la navegación
-    const pageNumbers = [];
-    for (let i = 1; i <= totalPages; i++) {
-        pageNumbers.push(i);
-    }
+    // Función para generar el array de páginas a mostrar
+    const getPageNumbers = () => {
+        const delta = 1; // Número de páginas a mostrar antes y después de la página actual
+        const range = [];
+        const rangeWithDots = [];
+        let l;
+
+        range.push(1);
+
+        if (totalPages <= 1) return range;
+
+        for (let i = currentPage - delta; i <= currentPage + delta; i++) {
+            if (i < totalPages && i > 1) {
+                range.push(i);
+            }
+        }
+        range.push(totalPages);
+
+        for (const i of range) {
+            if (l) {
+                if (i - l === 2) {
+                    rangeWithDots.push(l + 1);
+                } else if (i - l !== 1) {
+                    rangeWithDots.push('...');
+                }
+            }
+            rangeWithDots.push(i);
+            l = i;
+        }
+
+        return rangeWithDots;
+    };
 
     return (
         <div className="container mx-auto px-4 py-8">
-
             {/* Grid de Bicicletas */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {currentBikes.map(bike => (
@@ -42,14 +67,20 @@ const BikesPage = () => {
                     >
                         «
                     </button>
-                    {pageNumbers.map(number => (
-                        <button
-                            key={number}
-                            className={`join-item btn ${currentPage === number ? 'btn-active' : ''}`}
-                            onClick={() => { setCurrentPage(number); scroll(0, 0); }}
-                        >
-                            {number}
-                        </button>
+                    {getPageNumbers().map((number, index) => (
+                        number === '...' ? (
+                            <button key={`dots-${index}`} className="join-item btn btn-disabled">
+                                ...
+                            </button>
+                        ) : (
+                            <button
+                                key={number}
+                                className={`join-item btn ${currentPage === number ? 'btn-primary' : ''}`}
+                                onClick={() => { setCurrentPage(Number(number)); scroll(0, 0); }}
+                            >
+                                {number}
+                            </button>
+                        )
                     ))}
                     <button
                         className="join-item btn"
