@@ -1,24 +1,44 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import BikeCard from "../../../components/molecules/BikeCard";
+import PriceFilter from '../../../components/molecules/PriceFilter';
 import useBikeStore from '../../../store/bikes.store';
 
 const BikesPage = () => {
-
     const bikes = useBikeStore(state => state.bikes);
-
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 6;
+    const maxPrice = Math.max(...bikes.map(bike => bike.price));
+    const [priceRange, setPriceRange] = useState({
+        min: 0,
+        max: maxPrice
+    });
 
-    // Cálculos para la paginación
-    const totalPages = Math.ceil(bikes.length / itemsPerPage);
-    const currentBikes = bikes.slice(
+    // Filtrar bicicletas por precio
+    const filteredBikes = useMemo(() => {
+        return bikes.filter(bike =>
+            bike.price >= priceRange.min &&
+            bike.price <= priceRange.max
+        );
+    }, [bikes, priceRange]);
+
+    const itemsPerPage = 6;
+    const totalPages = Math.ceil(filteredBikes.length / itemsPerPage);
+    const currentBikes = filteredBikes.slice(
         (currentPage - 1) * itemsPerPage,
         currentPage * itemsPerPage
     );
 
-    // Función para generar el array de páginas a mostrar
+    const handlePriceChange = (newRange: { min: number; max: number }) => {
+        setPriceRange(newRange);
+        setCurrentPage(1);
+    };
+
+    const handleResetPrice = () => {
+        setPriceRange({ min: 0, max: maxPrice });
+        setCurrentPage(1);
+    };
+
     const getPageNumbers = () => {
-        const delta = 1; // Número de páginas a mostrar antes y después de la página actual
+        const delta = 1;
         const range = [];
         const rangeWithDots = [];
         let l;
@@ -51,6 +71,16 @@ const BikesPage = () => {
 
     return (
         <div className="container mx-auto px-4 py-8">
+
+            {/* Filtros */}
+            <PriceFilter
+                initialMin={0}
+                initialMax={maxPrice}
+                step={500}
+                onPriceChange={handlePriceChange}
+                onReset={handleResetPrice}
+            />
+
             {/* Grid de Bicicletas */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {currentBikes.map(bike => (
@@ -95,7 +125,7 @@ const BikesPage = () => {
 
             {/* Información de resultados */}
             <div className="text-center mt-4 text-gray-600">
-                Mostrando {currentBikes.length} de {bikes.length} bicicletas
+                Mostrando {currentBikes.length} de {filteredBikes.length} bicicletas filtradas
             </div>
         </div>
     );
