@@ -86,10 +86,12 @@ const LoginPage = () => {
 
                             <button
                                 type="submit"
-                                className={`btn btn-primary w-full ${loading ? 'loading' : ''}`}
+                                className={`btn btn-primary w-full`}
                                 disabled={loading}
                             >
-                                Iniciar Sesión
+                                {
+                                    loading ? 'Cargando...' : 'Iniciar Sesión'
+                                }
                             </button>
                         </form>
 
