@@ -1,13 +1,14 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
+import AdminGuard from "../components/guards/AuthGuard";
 import AppLayout from "../views/layouts/AppLayout";
+import BikeDetail from "../views/pages/BikeDetail";
+import BikesPage from "../views/pages/Bikes";
+import CartPage from "../views/pages/CartPage";
+import CheckoutPage from "../views/pages/CheckoutPage";
 import ErrorPage from "../views/pages/ErrorPage";
 import Home from "../views/pages/Home";
-import BikesPage from "../views/pages/Bikes";
-import BikeDetail from "../views/pages/BikeDetail";
 import LoginPage from "../views/pages/LoginPage";
 import RegisterPage from "../views/pages/RegisterPage";
-import AdminGuard from "../components/guards/AuthGuard";
-import CartPage from "../views/pages/CartPage";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -25,6 +26,7 @@ export const router = createBrowserRouter(
                 <Route path="/bikes" element={<BikesPage />} />
                 <Route path="/bikes/:id" element={<BikeDetail />} />
                 <Route path="/cart" element={<CartPage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
             </Route>
 
         </Route>
