@@ -8,7 +8,7 @@ export default function BikeCard({
     bike
 }: Props) {
     return (
-        <div className="card bg-base-300 w-96 shadow-lg hover:shadow-slate-50/5 hover:scale-105 transition-all border border-slate-50/10">
+        <div className="card bg-base-300 w-80 shadow-lg hover:shadow-slate-50/5 hover:scale-105 transition-all border border-slate-50/10">
             <figure>
                 <img
                     className="w-full h-64 object-cover"

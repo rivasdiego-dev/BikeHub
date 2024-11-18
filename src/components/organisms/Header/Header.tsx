@@ -5,6 +5,7 @@ import { useAuthStore } from "../../../store/auth.store";
 import useShoppingCartStore from "../../../store/shopping-cart.store";
 import CartPreview from "../../molecules/CartPreview";
 import { useState } from "react";
+import SearchBar from "../../molecules/SearchBar";
 
 export default function Header() {
     const navigate = useNavigate();
@@ -29,6 +30,7 @@ export default function Header() {
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 <div className="navbar bg-base-300 w-full">
+
                     {/* Hamburger menu for mobile */}
                     <div className="flex-none lg:hidden">
                         <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
@@ -41,6 +43,12 @@ export default function Header() {
                         <Link to="/">
                             <Logotype />
                         </Link>
+                    </div>
+
+
+                    {/* Búsqueda */}
+                    <div className="sm:flex-none hidden">
+                        <SearchBar />
                     </div>
 
                     {/* Desktop menu */}
@@ -137,6 +145,12 @@ export default function Header() {
             <div className="drawer-side z-10">
                 <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
                 <ul className="menu bg-base-200 min-h-full w-80 p-4">
+
+                    {/* Búsqueda */}
+                    <div className="flex-none">
+                        <SearchBar />
+                    </div>
+
                     {/* Navigation links */}
                     {menuItems.map(item => (
                         <li key={item.to}>

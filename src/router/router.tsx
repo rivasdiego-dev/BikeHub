@@ -9,6 +9,7 @@ import ErrorPage from "../views/pages/ErrorPage";
 import Home from "../views/pages/Home";
 import LoginPage from "../views/pages/LoginPage";
 import RegisterPage from "../views/pages/RegisterPage";
+import SearchPage from "../views/pages/SearchPage";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -27,6 +28,7 @@ export const router = createBrowserRouter(
                 <Route path="/bikes/:id" element={<BikeDetail />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/search" element={<SearchPage />} />
             </Route>
 
         </Route>
