@@ -1,8 +1,16 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import BikeCard from "../../../components/molecules/BikeCard";
-import { bikes } from "../../../utils/constants";
+import useBikeStore from "../../../store/bikes.store";
 
 export default function Home() {
+
+    const baseBikes = useBikeStore(state => state.bikes);
+    const bikes = useMemo(() => {
+        const shuffled = [...baseBikes].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, 3);
+    }, [baseBikes]);
+
     return (
         <>
             <div

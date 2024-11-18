@@ -6,7 +6,8 @@ export const bikes: Bike[] = [
         year: 2021,
         price: 3000,
         image: "https://images.unsplash.com/photo-1505705694340-019e1e335916?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        description: "The ultimate trail bike."
+        description: "The ultimate trail bike.",
+        stock: 2
     },
     {
         id: "2",
@@ -15,7 +16,8 @@ export const bikes: Bike[] = [
         year: 2021,
         price: 2800,
         image: "https://images.unsplash.com/photo-1494375364506-901512970ad4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        description: "The best trail bike."
+        description: "The best trail bike.",
+        stock: 2
     },
     {
         id: "3",
@@ -24,7 +26,8 @@ export const bikes: Bike[] = [
         year: 2021,
         price: 2600,
         image: "https://images.unsplash.com/photo-1453169753818-2feab4b4246d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        description: "The perfect trail bike."
+        description: "The perfect trail bike.",
+        stock: 2
     }
 ]
 
@@ -36,7 +39,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 6999.99,
         image: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?q=80&w=2080&auto=format&fit=crop",
-        description: "High-performance full suspension mountain bike with carbon frame and Fox suspension."
+        description: "High-performance full suspension mountain bike with carbon frame and Fox suspension.",
+        stock: 2
     },
     {
         id: "b2",
@@ -45,7 +49,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 8499.99,
         image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop",
-        description: "Professional-grade road bike with aerodynamic design and electronic shifting."
+        description: "Professional-grade road bike with aerodynamic design and electronic shifting.",
+        stock: 2
     },
     {
         id: "b3",
@@ -54,7 +59,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 5999.99,
         image: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?q=80&w=2016&auto=format&fit=crop",
-        description: "Versatile trail bike with VPP suspension system and 29-inch wheels."
+        description: "Versatile trail bike with VPP suspension system and 29-inch wheels.",
+        stock: 2
     },
     {
         id: "b4",
@@ -63,7 +69,8 @@ export const allbikes: Bike[] = [
         year: 2023,
         price: 7299.99,
         image: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?q=80&w=2070&auto=format&fit=crop",
-        description: "Lightweight racing bike with advanced aerodynamics and carbon frame."
+        description: "Lightweight racing bike with advanced aerodynamics and carbon frame.",
+        stock: 2
     },
     {
         id: "b5",
@@ -72,7 +79,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 4799.99,
         image: "https://images.unsplash.com/photo-1505705694340-019e1e335916?q=80&w=2089&auto=format&fit=crop",
-        description: "Trail-ready mountain bike with Maestro suspension system."
+        description: "Trail-ready mountain bike with Maestro suspension system.",
+        stock: 2
     },
     {
         id: "b6",
@@ -81,7 +89,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 9299.99,
         image: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=2070&auto=format&fit=crop",
-        description: "Premium road racing bike with integrated cockpit design."
+        description: "Premium road racing bike with integrated cockpit design.",
+        stock: 2
     },
     {
         id: "b7",
@@ -90,7 +99,8 @@ export const allbikes: Bike[] = [
         year: 2023,
         price: 6799.99,
         image: "https://images.unsplash.com/photo-1517949908114-71669a64d885?q=80&w=2070&auto=format&fit=crop",
-        description: "Trail bike with Switch Infinity suspension technology."
+        description: "Trail bike with Switch Infinity suspension technology.",
+        stock: 2
     },
     {
         id: "b8",
@@ -99,7 +109,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 7499.99,
         image: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?q=80&w=2070&auto=format&fit=crop",
-        description: "Cross-country racing bike with full suspension system."
+        description: "Cross-country racing bike with full suspension system.",
+        stock: 2
     },
     {
         id: "b9",
@@ -108,7 +119,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 8299.99,
         image: "https://images.unsplash.com/photo-1496104570434-e8719f0c1c02?q=80&w=2069&auto=format&fit=crop",
-        description: "World Cup worthy cross-country racing machine."
+        description: "World Cup worthy cross-country racing machine.",
+        stock: 2
     },
     {
         id: "b10",
@@ -117,7 +129,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 12999.99,
         image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop",
-        description: "Top-tier road racing bike with advanced aerodynamics."
+        description: "Top-tier road racing bike with advanced aerodynamics.",
+        stock: 2
     },
     {
         id: "b11",
@@ -126,7 +139,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 8999.99,
         image: "https://images.unsplash.com/photo-1544233726-9f1d2b27be8b?q=80&w=2072&auto=format&fit=crop",
-        description: "Enduro racing bike with aggressive geometry."
+        description: "Enduro racing bike with aggressive geometry.",
+        stock: 2
     },
     {
         id: "b12",
@@ -135,7 +149,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 5499.99,
         image: "https://images.unsplash.com/photo-1559348349-86f1f65817fe?q=80&w=2070&auto=format&fit=crop",
-        description: "Legendary trail bike with modern features."
+        description: "Legendary trail bike with modern features.",
+        stock: 2
     },
     {
         id: "b13",
@@ -144,7 +159,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 7999.99,
         image: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?q=80&w=2070&auto=format&fit=crop",
-        description: "Aero road bike with cutting-edge technology."
+        description: "Aero road bike with cutting-edge technology.",
+        stock: 2
     },
     {
         id: "b14",
@@ -153,7 +169,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 6499.99,
         image: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?q=80&w=2016&auto=format&fit=crop",
-        description: "Versatile all-mountain bike with mixed wheel sizes."
+        description: "Versatile all-mountain bike with mixed wheel sizes.",
+        stock: 2
     },
     {
         id: "b15",
@@ -162,7 +179,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 8799.99,
         image: "https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=2070&auto=format&fit=crop",
-        description: "Race-ready cross-country bike with Lefty fork."
+        description: "Race-ready cross-country bike with Lefty fork.",
+        stock: 2
     },
     {
         id: "b16",
@@ -171,7 +189,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 5999.99,
         image: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?q=80&w=2016&auto=format&fit=crop",
-        description: "Enduro bike with Maestro suspension system."
+        description: "Enduro bike with Maestro suspension system.",
+        stock: 2
     },
     {
         id: "b17",
@@ -180,7 +199,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 10999.99,
         image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop",
-        description: "Premium electric mountain bike with natural riding feel."
+        description: "Premium electric mountain bike with natural riding feel.",
+        stock: 2
     },
     {
         id: "b18",
@@ -189,7 +209,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 399.99,
         image: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?q=80&w=2070&auto=format&fit=crop",
-        description: "Basic hybrid bike for casual riding and commuting."
+        description: "Basic hybrid bike for casual riding and commuting.",
+        stock: 2
     },
     {
         id: "b19",
@@ -198,7 +219,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 12499.99,
         image: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=2070&auto=format&fit=crop",
-        description: "High-end endurance road bike with electronic shifting."
+        description: "High-end endurance road bike with electronic shifting.",
+        stock: 2
     },
     {
         id: "b20",
@@ -207,7 +229,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 699.99,
         image: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?q=80&w=2080&auto=format&fit=crop",
-        description: "Affordable trail bike for weekend adventures."
+        description: "Affordable trail bike for weekend adventures.",
+        stock: 2
     },
     {
         id: "ba1",
@@ -216,7 +239,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 6999.99,
         image: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?q=80&w=2080&auto=format&fit=crop",
-        description: "High-performance full suspension mountain bike with carbon frame and Fox suspension."
+        description: "High-performance full suspension mountain bike with carbon frame and Fox suspension.",
+        stock: 2
     },
     {
         id: "ba2",
@@ -225,7 +249,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 12499.99,
         image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop",
-        description: "Professional-grade road bike with aerodynamic design and electronic shifting."
+        description: "Professional-grade road bike with aerodynamic design and electronic shifting.",
+        stock: 2
     },
     {
         id: "ba3",
@@ -234,7 +259,8 @@ export const allbikes: Bike[] = [
         year: 2023,
         price: 3999.99,
         image: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?q=80&w=2016&auto=format&fit=crop",
-        description: "Versatile trail bike with VPP suspension system and 29-inch wheels."
+        description: "Versatile trail bike with VPP suspension system and 29-inch wheels.",
+        stock: 2
     },
     {
         id: "ba4",
@@ -243,7 +269,8 @@ export const allbikes: Bike[] = [
         year: 2022,
         price: 4299.99,
         image: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?q=80&w=2070&auto=format&fit=crop",
-        description: "Lightweight racing bike with advanced aerodynamics and carbon frame."
+        description: "Lightweight racing bike with advanced aerodynamics and carbon frame.",
+        stock: 2
     },
     {
         id: "ba5",
@@ -252,7 +279,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 2799.99,
         image: "https://images.unsplash.com/photo-1505705694340-019e1e335916?q=80&w=2089&auto=format&fit=crop",
-        description: "Trail-ready mountain bike with Maestro suspension system."
+        description: "Trail-ready mountain bike with Maestro suspension system.",
+        stock: 2
     },
     {
         id: "ba6",
@@ -261,7 +289,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 15299.99,
         image: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=2070&auto=format&fit=crop",
-        description: "Premium road racing bike with integrated cockpit design."
+        description: "Premium road racing bike with integrated cockpit design.",
+        stock: 2
     },
     {
         id: "ba7",
@@ -270,7 +299,8 @@ export const allbikes: Bike[] = [
         year: 2021,
         price: 4799.99,
         image: "https://images.unsplash.com/photo-1517949908114-71669a64d885?q=80&w=2070&auto=format&fit=crop",
-        description: "Trail bike with Switch Infinity suspension technology."
+        description: "Trail bike with Switch Infinity suspension technology.",
+        stock: 2
     },
     {
         id: "ba8",
@@ -279,7 +309,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 7499.99,
         image: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?q=80&w=2070&auto=format&fit=crop",
-        description: "Cross-country racing bike with full suspension system."
+        description: "Cross-country racing bike with full suspension system.",
+        stock: 2
     },
     {
         id: "ba9",
@@ -288,7 +319,8 @@ export const allbikes: Bike[] = [
         year: 2023,
         price: 8299.99,
         image: "https://images.unsplash.com/photo-1496104570434-e8719f0c1c02?q=80&w=2069&auto=format&fit=crop",
-        description: "World Cup worthy cross-country racing machine."
+        description: "World Cup worthy cross-country racing machine.",
+        stock: 2
     },
     {
         id: "ba10",
@@ -297,7 +329,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 18999.99,
         image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop",
-        description: "Top-tier road racing bike with advanced aerodynamics."
+        description: "Top-tier road racing bike with advanced aerodynamics.",
+        stock: 2
     },
     {
         id: "ba11",
@@ -306,7 +339,8 @@ export const allbikes: Bike[] = [
         year: 2022,
         price: 749.99,
         image: "https://images.unsplash.com/photo-1544233726-9f1d2b27be8b?q=80&w=2072&auto=format&fit=crop",
-        description: "Entry-level mountain bike perfect for beginners."
+        description: "Entry-level mountain bike perfect for beginners.",
+        stock: 2
     },
     {
         id: "ba12",
@@ -315,7 +349,8 @@ export const allbikes: Bike[] = [
         year: 2023,
         price: 899.99,
         image: "https://images.unsplash.com/photo-1559348349-86f1f65817fe?q=80&w=2070&auto=format&fit=crop",
-        description: "Reliable hardtail mountain bike for trail exploration."
+        description: "Reliable hardtail mountain bike for trail exploration.",
+        stock: 2
     },
     {
         id: "ba13",
@@ -324,7 +359,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 11999.99,
         image: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?q=80&w=2070&auto=format&fit=crop",
-        description: "Aero road bike with cutting-edge technology."
+        description: "Aero road bike with cutting-edge technology.",
+        stock: 2
     },
     {
         id: "ba14",
@@ -333,7 +369,8 @@ export const allbikes: Bike[] = [
         year: 2021,
         price: 3499.99,
         image: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?q=80&w=2016&auto=format&fit=crop",
-        description: "Versatile all-mountain bike with mixed wheel sizes."
+        description: "Versatile all-mountain bike with mixed wheel sizes.",
+        stock: 2
     },
     {
         id: "ba15",
@@ -342,7 +379,8 @@ export const allbikes: Bike[] = [
         year: 2023,
         price: 999.99,
         image: "https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=2070&auto=format&fit=crop",
-        description: "Urban fitness bike for daily commuting and exercise."
+        description: "Urban fitness bike for daily commuting and exercise.",
+        stock: 2
     },
     {
         id: "ba16",
@@ -351,7 +389,8 @@ export const allbikes: Bike[] = [
         year: 2022,
         price: 849.99,
         image: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?q=80&w=2016&auto=format&fit=crop",
-        description: "Entry-level road bike with reliable components."
+        description: "Entry-level road bike with reliable components.",
+        stock: 2
     },
     {
         id: "ba17",
@@ -360,7 +399,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 13999.99,
         image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop",
-        description: "Premium electric mountain bike with natural riding feel."
+        description: "Premium electric mountain bike with natural riding feel.",
+        stock: 2
     },
     {
         id: "ba18",
@@ -369,7 +409,8 @@ export const allbikes: Bike[] = [
         year: 2023,
         price: 599.99,
         image: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?q=80&w=2070&auto=format&fit=crop",
-        description: "Basic hybrid bike for casual riding and commuting."
+        description: "Basic hybrid bike for casual riding and commuting.",
+        stock: 2
     },
     {
         id: "ba19",
@@ -378,7 +419,8 @@ export const allbikes: Bike[] = [
         year: 2024,
         price: 16499.99,
         image: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=2070&auto=format&fit=crop",
-        description: "High-end endurance road bike with electronic shifting."
+        description: "High-end endurance road bike with electronic shifting.",
+        stock: 2
     },
     {
         id: "ba20",
@@ -387,6 +429,7 @@ export const allbikes: Bike[] = [
         year: 2022,
         price: 799.99,
         image: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?q=80&w=2080&auto=format&fit=crop",
-        description: "Affordable trail bike for weekend adventures."
+        description: "Affordable trail bike for weekend adventures.",
+        stock: 2
     }
 ];

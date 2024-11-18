@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import BikeCard from "../../../components/molecules/BikeCard";
-import { allbikes } from "../../../utils/constants";
-
-const bikes = [...allbikes, ...allbikes, ...allbikes];
+import useBikeStore from '../../../store/bikes.store';
 
 const BikesPage = () => {
+
+    const bikes = useBikeStore(state => state.bikes);
+
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 6;
 

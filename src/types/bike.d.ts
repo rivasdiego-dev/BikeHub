@@ -6,4 +6,5 @@ type Bike = {
     price: number;
     image: string;
     description: string;
+    stock: number;
 }
