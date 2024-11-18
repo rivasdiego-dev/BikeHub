@@ -7,6 +7,7 @@ import BikeDetail from "../views/pages/BikeDetail";
 import LoginPage from "../views/pages/LoginPage";
 import RegisterPage from "../views/pages/RegisterPage";
 import AdminGuard from "../components/guards/AuthGuard";
+import CartPage from "../views/pages/CartPage";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -23,6 +24,7 @@ export const router = createBrowserRouter(
                 <Route index path="/" element={<Home />} />
                 <Route path="/bikes" element={<BikesPage />} />
                 <Route path="/bikes/:id" element={<BikeDetail />} />
+                <Route path="/cart" element={<CartPage />} />
             </Route>
 
         </Route>

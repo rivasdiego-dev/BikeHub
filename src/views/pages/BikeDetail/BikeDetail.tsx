@@ -1,18 +1,26 @@
 import { InfoIcon, Star } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { allbikes, bikes } from '../../../utils/constants'; // Ajusta la ruta según tu estructura
+import { toast } from 'sonner';
+import useShoppingCartStore from '../../../store/shopping-cart.store';
+import { allbikes, bikes } from '../../../utils/constants';
 
 const BikeDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [quantity, setQuantity] = useState(1);
     const [selectedSize, setSelectedSize] = useState('');
+    const { addItem, items } = useShoppingCartStore();
 
-    // Encontrar la bicicleta correcta usando el id de la URL
+    // Encontrar la bicicleta
     const bike = bikes.find(bike => bike.id === id) || allbikes.find(bike => bike.id === id);
 
-    // Si no se encuentra la bicicleta, mostrar error o redireccionar
+    // Verificar stock disponible
+    const cartItem = items.find(item => item.id === id && item.selectedSize === selectedSize);
+    const currentCartQuantity = cartItem?.quantity || 0;
+    const availableStock = bike ? bike.stock - currentCartQuantity : 0;
+
+    // Si no se encuentra la bicicleta, mostrar error
     if (!bike) {
         return (
             <div className="mt-96 flex flex-col items-center justify-center">
@@ -29,12 +37,40 @@ const BikeDetail = () => {
         );
     }
 
-    // Opciones de talla para bicicletas
     const sizes = ['S', 'M', 'L', 'XL'];
-
-    // Simulación de reseñas
     const rating = 4.5;
     const reviews = 10;
+
+    const handleAddToCart = () => {
+        if (!selectedSize) {
+            toast.error('Por favor selecciona una talla');
+            return;
+        }
+
+        if (quantity <= 0) {
+            toast.error('La cantidad debe ser mayor a 0');
+            return;
+        }
+
+        if (quantity > availableStock) {
+            toast.error(`Solo quedan ${availableStock} unidades disponibles`);
+            return;
+        }
+
+        const newItem = {
+            ...bike,
+            quantity,
+            selectedSize
+        };
+
+        addItem(newItem, quantity);
+        toast.success('Producto añadido al carrito');
+    };
+
+    const handleBuyNow = () => {
+        handleAddToCart();
+        navigate('/checkout');
+    };
 
     return (
         <div className="mt-16 container mx-auto p-4">
@@ -87,6 +123,16 @@ const BikeDetail = () => {
                             {bike.description}
                         </p>
 
+                        {/* Stock Alert */}
+                        {availableStock < 5 && (
+                            <span className='font-bold'>
+                                {availableStock === 0
+                                    ? 'Producto agotado'
+                                    : `${availableStock} unidades disponibles`
+                                }
+                            </span>
+                        )}
+
                         {/* Selector de talla */}
                         <div className="form-control w-full">
                             <label className="label">
@@ -115,17 +161,30 @@ const BikeDetail = () => {
                                 type="number"
                                 className="input input-bordered bg-base-100 text-base-content"
                                 min="1"
+                                max={availableStock}
                                 value={quantity}
-                                onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
+                                onChange={(e) => {
+                                    const newValue = parseInt(e.target.value) || 1;
+                                    setQuantity(Math.min(newValue, availableStock));
+                                }}
+                                disabled={availableStock === 0}
                             />
                         </div>
 
                         {/* Botones de acción */}
                         <div className="flex gap-3 mt-4 w-full">
-                            <button className="btn btn-accent btn-ghost flex-1">
+                            <button
+                                className="btn btn-accent btn-ghost flex-1"
+                                onClick={handleAddToCart}
+                                disabled={availableStock === 0}
+                            >
                                 Añadir al Carrito
                             </button>
-                            <button className="btn btn-primary flex-1">
+                            <button
+                                className="btn btn-primary flex-1"
+                                onClick={handleBuyNow}
+                                disabled={availableStock === 0}
+                            >
                                 Comprar Ahora
                             </button>
                         </div>
