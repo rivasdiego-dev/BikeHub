@@ -19,6 +19,7 @@ import AdminLayout from "../views/layouts/AdminLayout";
 import AdminUsersTable from "../views/pages/admin/AdminUsersTable";
 import OrdersTable from "../views/pages/admin/OrdersTable";
 import BikesTable from "../views/pages/admin/BikesTable";
+import About from "../views/pages/About";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,6 +43,7 @@ export const router = createBrowserRouter(
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/about" element={<About/> } />
       </Route>
     </Route>
   )
