@@ -42,34 +42,41 @@ const BikeDetail = () => {
     const reviews = 10;
 
     const handleAddToCart = () => {
+        let success : boolean = true;
+
         if (!selectedSize) {
             toast.error('Por favor selecciona una talla');
-            return;
+            success = false;
         }
 
         if (quantity <= 0) {
             toast.error('La cantidad debe ser mayor a 0');
-            return;
+            success = false;
         }
 
         if (quantity > availableStock) {
             toast.error(`Solo quedan ${availableStock} unidades disponibles`);
-            return;
+            success = false;
         }
 
-        const newItem = {
+        if (success) {
+          const newItem = {
             ...bike,
             quantity,
             selectedSize
-        };
+          };
 
-        addItem(newItem, quantity);
-        toast.success('Producto añadido al carrito');
+          addItem(newItem, quantity, selectedSize);
+          toast.success('Producto añadido al carrito');
+
+          return success;
+        }
+
+        return success;
     };
 
     const handleBuyNow = () => {
-        handleAddToCart();
-        navigate('/checkout');
+       if (handleAddToCart()) navigate('/checkout');
     };
 
     return (
